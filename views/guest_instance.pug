@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  main
+    div
+      if guest_info
+        a(guest_info.url)= guest_info._id
+        p
+        span#warning A UNIQUE ID
+        div
+          p= 'Name: '+guest_info.first_name
+          p= 'Surname: '+guest_info.second_name
+          p= 'Date: '+guest_info.date_of_reservation_formatted
+
+        div
+          form(action=guest_info.url+'/delete' method="POST")
+            button(type='submit') Cancel reservation
