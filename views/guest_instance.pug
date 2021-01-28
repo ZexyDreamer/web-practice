@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  main
+    div#person_card
+      if guest_info
+        h1#warning(guest_info.url)= guest_info._id
+        h2='Your unique ID please remember it'
+        div
+          p= 'Name: '+guest_info.first_name
+          p= 'Surname: '+guest_info.second_name
+          p= 'Date: '+guest_info.date_of_reservation_formatted
+
+        div
+          form(action=guest_info.url+'/delete' method="POST")
+            button#delete_button(type='submit') Cancel reservation

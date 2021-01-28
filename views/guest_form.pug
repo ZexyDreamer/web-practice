@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  main#reservation_card
+    h1= 'Reservation'
+    p
+    form(method='POST')
+      div
+        label(for="first_name") Name:
+        input(type='text', name='first_name', required='true', placeholder='Your name')
+      div
+        label(for="second_name") Surname:
+        input(type='text', name='second_name', required='true', placeholder='Your surname')
+      div
+        label(for="date_of_reservation") Date:
+        input(type="date", name="date_of_reservation", required='true', placeholder='Date of reservation')
+      button#submit_button(type='submit') Submit
+
+  script
+    include ../public/javascripts/datescript.js
+    

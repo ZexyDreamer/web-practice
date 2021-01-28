@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  main
+    div
+        each guest in guest_list
+          ul
+            li
+              a(href=guest.url) #{guest.first_name} #{guest.second_name} #{guest.date_of_reservation_formatted}
+        else
+          p There's nothing here yet.
